@@ -65,7 +65,8 @@ const getSearch = e => {
        )
        }
       </div>
-      <center className="footerNote">Made for Education purpose only <br></br> Developed by <a href="http://jaypatel.online/">Jay Patel</a> </center>
+      <center className="footerNote">Made for Education purpose only <br></br> Developed by <a href="http://jaypatel.online/">Jay Patel</a> <br></br>
+      Github:-  </center>
     </div>
   );
 

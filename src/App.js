@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Recipe from "./Recipe.js";
+import {v1 as uuid} from "uuid";
 
 const App = () => {
   const [recipes, setRecipes] = useState([]);
@@ -34,7 +35,6 @@ const updateSearch = e => {
 const getSearch = e => {
   e.preventDefault();
   setQuery(search);
-  setRecipes([]);
 }
 
   return (
@@ -52,7 +52,7 @@ const getSearch = e => {
       <div className="styles">
       {recipes.map((recipe) =>  ( 
         <Recipe 
-          key={recipe.recipe.label}   
+          key={uuid()}   
           label={recipe.recipe.label}
           calo={recipe.recipe.calories}
           img={recipe.recipe.image}

@@ -17,7 +17,7 @@ const App = () => {
 
   useEffect(() => {
     getRecipes();
-  },[query]);
+  },query);
 
   const getRecipes = async () => {
     const response = await fetch(

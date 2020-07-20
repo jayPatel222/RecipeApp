@@ -17,7 +17,7 @@ const App = () => {
 
   useEffect(() => {
     getRecipes();
-  });
+  },[query]);
 
   const getRecipes = async () => {
     const response = await fetch(
@@ -35,7 +35,6 @@ const updateSearch = e => {
 const getSearch = e => {
   e.preventDefault();
   setQuery(search);
-  setRecipes([]);
 }
 
   return (

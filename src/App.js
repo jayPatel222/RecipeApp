@@ -13,11 +13,11 @@ const App = () => {
    setCalo([e.target.value]);
  }
 
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     getRecipes();
   }, [query]);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+ 
 
   const getRecipes = async () => {
     const response = await fetch(

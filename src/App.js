@@ -5,7 +5,7 @@ import Recipe from "./Recipe.js";
 const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState(['']);
-  const [query,setQuery] = useState('');
+  const [query,setQuery] = useState(['']);
   const [calo,setCalo] = useState(50000);
 
   

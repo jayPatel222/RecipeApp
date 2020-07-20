@@ -5,8 +5,8 @@ import Recipe from "./Recipe.js";
 const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState(['']);
-  const [query,setQuery] = useState('');
-  const [calo,setCalo] = useState(50000);
+  const [query, setQuery] = useState('');
+  const [calo, setCalo] = useState(50000);
 
   
  const handleChange = e => {
@@ -34,6 +34,7 @@ const updateSearch = e => {
 const getSearch = e => {
   e.preventDefault();
   setQuery(search);
+  setRecipes([]);
 }
 
   return (

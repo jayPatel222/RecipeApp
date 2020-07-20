@@ -1,16 +1,3 @@
-This is an Recipe App where a user can search for there favorite recipe and also can customize the calorie
-Count:-
-Stack Used:-
-> React
-> JavaScript
-> CSS
-> JSX
-
-Try it out:- https://jaypatel222.netlify.app/
-
-
-
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Recipe from "./Recipe.js";
-import {v1 as uuid} from "uuid";
 
 const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState(['']);
-  const [query, setQuery] = useState('');
-  const [calo, setCalo] = useState(50000);
+  const [query,setQuery] = useState('');
+  const [calo,setCalo] = useState(50000);
 
   
  const handleChange = e => {
@@ -17,7 +16,7 @@ const App = () => {
 
   useEffect(() => {
     getRecipes();
-  },[query]);
+  }, [query]);
 
   const getRecipes = async () => {
     const response = await fetch(
@@ -35,7 +34,6 @@ const updateSearch = e => {
 const getSearch = e => {
   e.preventDefault();
   setQuery(search);
-
 }
 
   return (
@@ -53,7 +51,7 @@ const getSearch = e => {
       <div className="styles">
       {recipes.map((recipe) =>  ( 
         <Recipe 
-          key={uuid()}   
+          key={recipe.recipe.label}   
           label={recipe.recipe.label}
           calo={recipe.recipe.calories}
           img={recipe.recipe.image}

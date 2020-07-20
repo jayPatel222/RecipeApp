@@ -17,6 +17,7 @@ const App = () => {
   useEffect(() => {
     getRecipes();
   }, [query]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
 
   const getRecipes = async () => {
     const response = await fetch(

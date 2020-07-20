@@ -17,7 +17,7 @@ const App = () => {
 
   useEffect(() => {
     getRecipes();
-  }, [query]);
+  },[query]);
 
   const getRecipes = async () => {
     const response = await fetch(
@@ -35,6 +35,7 @@ const updateSearch = e => {
 const getSearch = e => {
   e.preventDefault();
   setQuery(search);
+  setRecipes([]);
 }
 
   return (
@@ -66,7 +67,7 @@ const getSearch = e => {
        )
        }
       </div>
-      <center className="footerNote">Made for Education purpose only <br></br> Developed by <a href="http://jaypatel.online/">Jay Patel</a> <br></br>
+      <center className="footerNote">Made for Educational purpose only <br></br> Developed by <a href="http://jaypatel.online/">Jay Patel</a> <br></br>
       Github:-  <a href="https://github.com/jayPatel222/RecipeApp">Recipe App</a> </center>
     </div>
   );

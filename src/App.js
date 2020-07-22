@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Recipe from "./Recipe.js";
+import {v1 as uuid} from "uuid";
 
 const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState(['']);
-  const [query,setQuery] = useState('');
-  const [calo,setCalo] = useState(50000);
+  const [query, setQuery] = useState('');
+  const [calo, setCalo] = useState(50000);
 
   
  const handleChange = e => {
@@ -15,18 +16,20 @@ const App = () => {
 
 
   useEffect(() => {
-    getRecipes();
-  }, [query]);
-
-  const getRecipes = async () => {
-    const response = await fetch(
-      "https://api.edamam.com/search?q="+query+"&app_id=79d109dc&app_key=8b9d3652d35b50f1a15bcb7ab2712113&from=0&to=30"
-      
-    );
-    const data = await response.json();
-    setRecipes(data.hits);
     
-  };
+    const getRecipes = async () => {
+      const response = await fetch(
+        "https://api.edamam.com/search?q="+query+"&app_id=79d109dc&app_key=8b9d3652d35b50f1a15bcb7ab2712113&from=0&to=30"
+        
+      );
+      const data = await response.json();
+      setRecipes(data.hits);
+      
+    };
+    getRecipes();
+  },[query]);
+
+  
 
 const updateSearch = e => {
   setSearch(e.target.value);
@@ -34,6 +37,7 @@ const updateSearch = e => {
 const getSearch = e => {
   e.preventDefault();
   setQuery(search);
+
 }
 
   return (
@@ -51,7 +55,7 @@ const getSearch = e => {
       <div className="styles">
       {recipes.map((recipe) =>  ( 
         <Recipe 
-          key={recipe.recipe.label}   
+          key={uuid()}   
           label={recipe.recipe.label}
           calo={recipe.recipe.calories}
           img={recipe.recipe.image}

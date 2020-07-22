@@ -5,7 +5,7 @@ import Recipe from "./Recipe.js";
 const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState(['']);
-  const [query,setQuery] = useState(['']);
+  const [query,setQuery] = useState('');
   const [calo,setCalo] = useState(50000);
 
   
@@ -13,11 +13,10 @@ const App = () => {
    setCalo([e.target.value]);
  }
 
-// eslint-disable-next-line react-hooks/exhaustive-deps
+
   useEffect(() => {
     getRecipes();
-  });
- 
+  }, [query]);
 
   const getRecipes = async () => {
     const response = await fetch(
